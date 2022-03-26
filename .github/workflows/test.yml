@@ -23,8 +23,8 @@ jobs:
           ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
+        pip install wheel
         pip install -e '.[test]'
     - name: Run tests
       run: |
         pytest
-
