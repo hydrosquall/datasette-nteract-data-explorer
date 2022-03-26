@@ -2,7 +2,6 @@ import { h, FunctionComponent } from "preact";
 // import useEffect and useState from preact hooks
 import { useEffect, useState } from "preact/hooks";
 
-
 import DataExplorer from "@nteract/data-explorer";
 
 const basicData = {
@@ -44,13 +43,11 @@ interface DatasetteDataExplorerProps {
   dataUrl: string;
 }
 
-
-type DatasetteRow = Record<string, number | string>
+type DatasetteRow = Record<string, number | string>;
 type DatasetteTable = DatasetteRow[];
 
-
+// TODO: investigate d3 autoType
 const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
-
   if (table.length === 0) {
     return null;
   }
@@ -59,14 +56,18 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
   const fieldNames = Object.keys(table[0]);
 
   const fields = fieldNames.map((col) => {
-
     // TODO: permit user to set datatype, e.g. calling status code
     // a color item. Or generation
+    // TODO: check what columns appear across all rows
+    // Throw warning if they don't all have same shape
+    // Maybe parse datase
+    // TODO: permit "boolean", datetime to be processed
+    // https://github.com/nteract/data-explorer/blob/3f7cd5b336ab43ff25fcd283aa62a182a801375d/src/utilities/types.ts
 
-    if (table.every(r => typeof r[col] === 'number' && Number.isInteger(r[col]))) {
-      return { name: col, type: "integer" };
-    }
     if (table.every((r) => typeof r[col] === "number")) {
+      if (table.every((r) => Number.isInteger(r[col]))) {
+        return { name: col, type: "integer" };
+      }
       return { name: col, type: "number" };
     }
 
@@ -82,9 +83,6 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
 
     return { name: col, type: "string" };
 
-    // if (col.kind === "object" && col.meta.type === "unknown") {
-    //   return { name: id, type: "any" };
-    // }
     // return { name: id, type: "any" };
   });
 
@@ -114,13 +112,11 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
   return data;
 };
 
-
-
-
 // TODO: allow setting datatype per column and/or doing light parsing.
 
-export const DatasetteDataExplorer:  FunctionComponent<DatasetteDataExplorerProps> = (props) => {
-
+export const DatasetteDataExplorer: FunctionComponent<
+  DatasetteDataExplorerProps
+> = (props) => {
   console.log("DatasetteDataExplorer", props);
 
   // fetch data from props.dataUrl in a useEffect hook
@@ -131,7 +127,7 @@ export const DatasetteDataExplorer:  FunctionComponent<DatasetteDataExplorerProp
       .then((response) => response.json())
       .then((json) => {
         // const rawData = json;
-        const parsedData = dataFrameToFrictionlessSpec(json)
+        const parsedData = dataFrameToFrictionlessSpec(json);
 
         setData(parsedData);
       });
@@ -139,10 +135,9 @@ export const DatasetteDataExplorer:  FunctionComponent<DatasetteDataExplorerProp
 
   console.log({ data });
 
-
   return (
     <div className="DatasetteDataExplorer">
       {data && <DataExplorer data={data ?? basicData} />};
     </div>
   );
-}
+};
