@@ -61,7 +61,8 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
     // TODO: check what columns appear across all rows
     // Throw warning if they don't all have same shape
     // Maybe parse datase
-    // TODO: permit "boolean", datetime to be processed
+    // TODO: permit  datetime to be processed specially
+    // TODO: permit user specified datatype mapping
     // https://github.com/nteract/data-explorer/blob/3f7cd5b336ab43ff25fcd283aa62a182a801375d/src/utilities/types.ts
 
     if (table.every((r) => typeof r[col] === "number")) {
@@ -69,6 +70,10 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
         return { name: col, type: "integer" };
       }
       return { name: col, type: "number" };
+    }
+
+    if (table.every((r) => typeof r[col] === "boolean")) {
+      return { name: col, type: "boolean" };
     }
 
     // if (col.meta.type === "datetime") {
