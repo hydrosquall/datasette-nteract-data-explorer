@@ -1,5 +1,5 @@
 import { h, FunctionComponent } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState, useMemo } from "preact/hooks";
 
 import {
   Accordion,
@@ -10,149 +10,109 @@ import {
 } from "@modulz/design-system";
 
 import DataExplorer from "@nteract/data-explorer";
-
-// const basicData = {
-//   schema: {
-//     fields: [
-//       {
-//         name: "index",
-//         type: "integer",
-//       },
-//       {
-//         name: "param_session",
-//         type: "object",
-//       },
-//     ],
-//     primaryKey: ["index"],
-//   },
-//   data: [
-//     {
-//       index: 0,
-//       param_session: [
-//         {
-//           name: "foo",
-//         },
-//         {
-//           name: "foo",
-//         },
-//       ],
-//     },
-//   ],
-// };
-
-//  DatasetteExplorer
-// TODO... make component height configurable
-// NOTE: datasette explorer URL params may collide with Datasette native URl params.
-// Use filters with CAUTION! perhaps, may need to disable
-// the native URL params integration with a pull request to Data-explorer.
+import localforage from "localforage";
+import { dataFrameToFrictionlessSpec } from "./datasette-data-explorer-helpers";
+import {
+  FrictionlessSpecField,
+  FrictionlessSpec,
+} from "./datasette-data-explorer.types";
+import { FieldTypeCustomizerPanel } from "./FieldTypeCustomizer";
 
 interface DatasetteDataExplorerProps {
   dataUrl: string;
 }
 
-type DatasetteRow = Record<string, number | string>;
-type DatasetteTable = DatasetteRow[];
-
-// TODO: investigate d3 autoType
-const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
-  if (table.length === 0) {
-    return null;
-  }
-
-  // we assume all rows have same keys
-  const fieldNames = Object.keys(table[0]);
-
-  const fields = fieldNames.map((col) => {
-    // TODO: permit user to set datatype, e.g. calling status code
-    // a color item. Or generation
-    // TODO: check what columns appear across all rows
-    // Throw warning if they don't all have same shape
-    // Maybe parse datase
-    // TODO: permit datetime to be processed specially
-    // TODO: permit user specified datatype mapping
-    // https://github.com/nteract/data-explorer/blob/3f7cd5b336ab43ff25fcd283aa62a182a801375d/src/utilities/types.ts
-
-    if (table.every((r) => typeof r[col] === "number")) {
-      if (table.every((r) => Number.isInteger(r[col]))) {
-        return { name: col, type: "integer" };
-      }
-      return { name: col, type: "number" };
-    }
-
-    if (table.every((r) => typeof r[col] === "boolean")) {
-      return { name: col, type: "boolean" };
-    }
-
-    // if (col.meta.type === "datetime") {
-    //   return { name: id, type: "datetime" };
-    // }
-
-    // Resolve upstream bug with nteract to fix table display
-    // https://github.com/nteract/data-explorer/pull/41
-    // if (col.kind === "string") {
-    //   return { name: id, type: "string" };
-    // }
-
-    return { name: col, type: "string" };
-  });
-
-  const data = {
-    schema: {
-      fields,
-      primaryKey: [],
-    },
-    data: table,
-    // data: table.map((r: any, i: number) => {
-    //   const row = {
-    //     ...r,
-    //   };
-
-    // FillNa - // Data integrity
-    // We can remove this if we enforce data quality checks
-    // higher up in the data pipeline
-    // fields.forEach((field) => {
-    //   if (row.type === "string" && row[field.name] === null) {
-    //     row[field.name] = "";
-    //   }
-    // });
-    //   return row;
-    // }),
-  };
-  return data;
-};
-
-// TODO: allow setting datatype per column and/or doing light datatype parsing
-
 export const DatasetteDataExplorer: FunctionComponent<
   DatasetteDataExplorerProps
 > = (props) => {
-
-  const [data, setData] = useState<any>(null);
+  const { dataUrl } = props;
+  const [frictionlessData, setFrictionlessData] = useState<FrictionlessSpec>();
+  const [customFields, setCustomFields] = useState<FrictionlessSpecField[]>();
 
   useEffect(() => {
+
+    // TODO: Swap dataURL for
+    // option that checks the columns metadata instead of just
+    // checking the first row.
     fetch(props.dataUrl)
       .then((response) => response.json())
       .then((json) => {
         const maybeFrictionlessDataSpec = dataFrameToFrictionlessSpec(json);
-        setData(maybeFrictionlessDataSpec);
+        setFrictionlessData(maybeFrictionlessDataSpec);
       });
   }, [props.dataUrl]);
 
-  // console.log({ data });
+  // Combine user defined with inferred field types
+  const combinedData = useMemo(() => {
+    if (frictionlessData && customFields) {
+      return {
+        ...frictionlessData,
+        schema: {
+          ...frictionlessData.schema,
+          fields: frictionlessData.schema.fields.map((field) => {
+            const maybeCustomField = customFields.find(
+              (f) => f.name === field.name
+            );
+            return {
+              ...field,
+              type: maybeCustomField ? maybeCustomField.type : field.type,
+            };
+          }),
+        },
+      };
+    }
+    return frictionlessData;
+  }, [frictionlessData, customFields]);
+
+  // Load custom field type assignments from localStorage
+  useEffect(() => {
+    // TODO: rethink how cache works, since it may change based
+    // on which URL params are included in the URL
+    localforage.getItem(dataUrl, function (err, value) {
+      if (value) {
+        setCustomFields(value as any);
+      } else {
+        console.warn(err);
+      }
+    });
+  }, []);
+
+  // Handler to save custom fields to local storage
+  const handleSave = (field: FrictionlessSpecField[]) => {
+    localforage.setItem(dataUrl, field, function (err, value) {
+      if (err) {
+        console.warn(err);
+      }
+    });
+  };
 
   return (
-    <div className="DatasetteDataExplorer">
-      {data && (
+    <div className="datasette-data-explorer">
+      {combinedData && (
         <Accordion type="single">
           <AccordionItem value="default-1">
             <AccordionTrigger>
-              <Button
-              >
-                Toggle Data Explorer
+              <Button>
+                Toggle Data Explorer ({combinedData.data.length} rows )
               </Button>
             </AccordionTrigger>
             <AccordionContent>
-              <DataExplorer data={data} />;
+              <div style={{ marginBottom: 16 }}>
+                <DataExplorer data={combinedData} />
+                <details>
+                  <summary>
+                    Advanced: Customize field types (
+                    {combinedData.schema.fields.length} fields)
+                  </summary>
+                  <div>
+                    <FieldTypeCustomizerPanel
+                      inferredFields={combinedData.schema.fields}
+                      customFields={customFields}
+                      onSave={handleSave}
+                    />
+                  </div>
+                </details>
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
