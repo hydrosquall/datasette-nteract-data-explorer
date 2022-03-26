@@ -1,7 +1,28 @@
-# datasette mydb.db --plugins-dir=plugins/
-
 from datasette import hookimpl
+import glob
+import os
+
+cache = {}
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+
+# cache files
+def cached_filepaths_for_extension(extension):
+    pattern = os.path.join(static_dir, "*.{}".format(extension))
+    if pattern not in cache:
+        cache[pattern] = [
+            "/-/static-plugins/datasette_nteract_data_explorer/{}".format(os.path.basename(g))
+            for g in glob.glob(pattern)
+        ]
+    return cache[pattern]
+
 
 @hookimpl
-def prepare_connection(conn):
-    conn.create_function('hello_world', 0, lambda: 'Hello world!')
+def extra_css_urls(view_name):
+    if view_name == "table":
+        return cached_filepaths_for_extension("css")
+
+
+@hookimpl
+def extra_js_urls(view_name):
+    if view_name == "table":
+        return cached_filepaths_for_extension("js")

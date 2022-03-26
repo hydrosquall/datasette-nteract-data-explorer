@@ -1,0 +1,9 @@
+{
+  "name": "datasette-nteract-data-explorer",
+  "version": "1.0.0",
+  "description": "Nteract data explorer in datasette",
+  "main": "index.ts",
+  "author": "Cameron Yick <cameron.yick@datadoghq.com>",
+  "license": "MIT",
+  "private": false
+}
