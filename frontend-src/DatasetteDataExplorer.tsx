@@ -30,7 +30,6 @@ export const DatasetteDataExplorer: FunctionComponent<
   const [customFields, setCustomFields] = useState<FrictionlessSpecField[]>();
 
   useEffect(() => {
-
     // TODO: Swap dataURL for
     // option that checks the columns metadata instead of just
     // checking the first row.
@@ -88,12 +87,12 @@ export const DatasetteDataExplorer: FunctionComponent<
 
   return (
     <div className="datasette-data-explorer">
-      {combinedData && (
+      {combinedData && combinedData.data.length > 0 && (
         <Accordion type="single">
           <AccordionItem value="default-1">
             <AccordionTrigger>
               <Button>
-                Toggle Data Explorer ({combinedData.data.length} rows )
+                View ({combinedData.data.length} rows) in Data Explorer
               </Button>
             </AccordionTrigger>
             <AccordionContent>
@@ -101,8 +100,8 @@ export const DatasetteDataExplorer: FunctionComponent<
                 <DataExplorer data={combinedData} />
                 <details>
                   <summary>
-                    Advanced: Customize field types (
-                    {combinedData.schema.fields.length} fields)
+                    Data Explorer Settings for {combinedData.schema.fields.length}{" "}
+                    fields
                   </summary>
                   <div>
                     <FieldTypeCustomizerPanel
