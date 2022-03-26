@@ -1,14 +1,11 @@
 from datasette import hookimpl
 import glob
 from os import path, pardir
-from pathlib import Path
+# from pathlib import Path
 
+# TODO: is this in-memory cache necessary?
 cache = {}
-# static_dir = path.join(path.dirname(__file__), "static")
 static_dir = path.join(path.dirname(__file__), pardir, "dist")
-
-print(static_dir)
-
 
 # cache files
 def cached_filepaths_for_extension(extension):

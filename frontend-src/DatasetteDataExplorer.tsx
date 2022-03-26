@@ -1,37 +1,44 @@
 import { h, FunctionComponent } from "preact";
-// import useEffect and useState from preact hooks
 import { useEffect, useState } from "preact/hooks";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+} from "@modulz/design-system";
 
 import DataExplorer from "@nteract/data-explorer";
 
-const basicData = {
-  schema: {
-    fields: [
-      {
-        name: "index",
-        type: "integer",
-      },
-      {
-        name: "param_session",
-        type: "object",
-      },
-    ],
-    primaryKey: ["index"],
-  },
-  data: [
-    {
-      index: 0,
-      param_session: [
-        {
-          name: "foo",
-        },
-        {
-          name: "foo",
-        },
-      ],
-    },
-  ],
-};
+// const basicData = {
+//   schema: {
+//     fields: [
+//       {
+//         name: "index",
+//         type: "integer",
+//       },
+//       {
+//         name: "param_session",
+//         type: "object",
+//       },
+//     ],
+//     primaryKey: ["index"],
+//   },
+//   data: [
+//     {
+//       index: 0,
+//       param_session: [
+//         {
+//           name: "foo",
+//         },
+//         {
+//           name: "foo",
+//         },
+//       ],
+//     },
+//   ],
+// };
 
 //  DatasetteExplorer
 // TODO... make component height configurable
@@ -61,7 +68,7 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
     // TODO: check what columns appear across all rows
     // Throw warning if they don't all have same shape
     // Maybe parse datase
-    // TODO: permit  datetime to be processed specially
+    // TODO: permit datetime to be processed specially
     // TODO: permit user specified datatype mapping
     // https://github.com/nteract/data-explorer/blob/3f7cd5b336ab43ff25fcd283aa62a182a801375d/src/utilities/types.ts
 
@@ -87,8 +94,6 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
     // }
 
     return { name: col, type: "string" };
-
-    // return { name: id, type: "any" };
   });
 
   const data = {
@@ -102,47 +107,56 @@ const dataFrameToFrictionlessSpec = (table: DatasetteTable) => {
     //     ...r,
     //   };
 
-    //   // FillNa - // Data integrity
-    //   // We can remove this if we enforce data quality checks
-    //   // higher up in the data pipeline
-    //   // fields.forEach((field) => {
-    //   //   if (row.type === "string" && row[field.name] === null) {
-    //   //     row[field.name] = "";
-    //   //   }
-    //   // });
+    // FillNa - // Data integrity
+    // We can remove this if we enforce data quality checks
+    // higher up in the data pipeline
+    // fields.forEach((field) => {
+    //   if (row.type === "string" && row[field.name] === null) {
+    //     row[field.name] = "";
+    //   }
+    // });
     //   return row;
     // }),
   };
-
   return data;
 };
 
-// TODO: allow setting datatype per column and/or doing light parsing.
+// TODO: allow setting datatype per column and/or doing light datatype parsing
 
 export const DatasetteDataExplorer: FunctionComponent<
   DatasetteDataExplorerProps
 > = (props) => {
-  console.log("DatasetteDataExplorer", props);
 
-  // fetch data from props.dataUrl in a useEffect hook
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     fetch(props.dataUrl)
       .then((response) => response.json())
       .then((json) => {
-        // const rawData = json;
-        const parsedData = dataFrameToFrictionlessSpec(json);
-
-        setData(parsedData);
+        const maybeFrictionlessDataSpec = dataFrameToFrictionlessSpec(json);
+        setData(maybeFrictionlessDataSpec);
       });
   }, [props.dataUrl]);
 
-  console.log({ data });
+  // console.log({ data });
 
   return (
     <div className="DatasetteDataExplorer">
-      {data && <DataExplorer data={data ?? basicData} />};
+      {data && (
+        <Accordion type="single">
+          <AccordionItem value="default-1">
+            <AccordionTrigger>
+              <Button
+              >
+                Toggle Data Explorer
+              </Button>
+            </AccordionTrigger>
+            <AccordionContent>
+              <DataExplorer data={data} />;
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
     </div>
   );
 };

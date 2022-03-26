@@ -2,7 +2,7 @@
   "name": "datasette-nteract-data-explorer",
   "version": "1.0.0",
   "description": "Nteract data explorer in datasette",
-  "main": "frontend-src/index.js",
+  "main": "dist/index.js",
   "author": "Cameron Yick <cameron.yick@datadoghq.com>",
   "license": "MIT",
   "private": false,
@@ -17,6 +17,7 @@
     "build": "yarn parcel build frontend-src/main.tsx"
   },
   "dependencies": {
+    "@modulz/design-system": "^0.6.2",
     "@nteract/data-explorer": "^8.2.12",
     "@swc/helpers": "^0.3.8",
     "preact": "^10.6.6",
