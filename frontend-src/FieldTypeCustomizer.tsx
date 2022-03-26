@@ -27,7 +27,7 @@ export const FieldTypeCustomizerPanel: FunctionComponent<FieldTypeCustomizerProp
             onSave(localCustomFields);
           }}
         >
-          Save (refresh page to apply)
+          Save settings (refresh page to apply)
         </Button>
 
         <Button
@@ -36,7 +36,7 @@ export const FieldTypeCustomizerPanel: FunctionComponent<FieldTypeCustomizerProp
           }}
           style={{ marginLeft: "4px" }}
         >
-          Delete saved overrides
+          Delete settings
         </Button>
       </div>
 

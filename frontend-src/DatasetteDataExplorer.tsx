@@ -29,6 +29,9 @@ export const DatasetteDataExplorer: FunctionComponent<
   const [frictionlessData, setFrictionlessData] = useState<FrictionlessSpec>();
   const [customFields, setCustomFields] = useState<FrictionlessSpecField[]>();
 
+  // is settings visibile
+  const [isSettingsVisible, setIsSettingsVisible] = useState(false);
+
   useEffect(() => {
     // TODO: Swap dataURL for
     // option that checks the columns metadata instead of just
@@ -96,21 +99,28 @@ export const DatasetteDataExplorer: FunctionComponent<
               </Button>
             </AccordionTrigger>
             <AccordionContent>
-              <div style={{ marginBottom: 16 }}>
+              <div style={{ marginBottom: 20 }}>
                 <DataExplorer data={combinedData} />
-                <details>
-                  <summary>
-                    Data Explorer Settings for {combinedData.schema.fields.length}{" "}
-                    fields
-                  </summary>
-                  <div>
-                    <FieldTypeCustomizerPanel
-                      inferredFields={combinedData.schema.fields}
-                      customFields={customFields}
-                      onSave={handleSave}
-                    />
-                  </div>
-                </details>
+                <div>
+                  <Button
+                    onClick={() => {
+                      setIsSettingsVisible(!isSettingsVisible);
+                    }}
+                    style={{ marginTop: 4, marginBottom: 4 }}
+                  >
+                    {isSettingsVisible ? 'Hide' : "Show"} Data Explorer Settings
+                  </Button>
+
+                  {isSettingsVisible && (
+                    <div>
+                      <FieldTypeCustomizerPanel
+                        inferredFields={combinedData.schema.fields}
+                        customFields={customFields}
+                        onSave={handleSave}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
             </AccordionContent>
           </AccordionItem>
