@@ -45,4 +45,13 @@ A test command:
 datasette ~/Library/Safari/History.db  --plugins-dir=plugins/
 ```
 
+```bash
+datasette ~/Library/Safari/History.db  --plugins-dir=plugins/ --static assets:dist/
+```
+
+
+
+--static assets:static-files/
+
 - <http://2016.padjo.org/tutorials/sqlite-your-browser-history/>
+- <https://github.com/metonym/parcel-preact-typescript>

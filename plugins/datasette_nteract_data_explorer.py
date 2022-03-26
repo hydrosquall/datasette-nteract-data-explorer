@@ -1,16 +1,25 @@
 from datasette import hookimpl
 import glob
-import os
+from os import path, pardir
+from pathlib import Path
 
 cache = {}
-static_dir = os.path.join(os.path.dirname(__file__), "static")
+# static_dir = path.join(path.dirname(__file__), "static")
+static_dir = path.join(path.dirname(__file__), pardir, "dist")
+
+print(static_dir)
+
 
 # cache files
 def cached_filepaths_for_extension(extension):
-    pattern = os.path.join(static_dir, "*.{}".format(extension))
+    pattern = path.join(static_dir, "*.{}".format(extension))
     if pattern not in cache:
+        # cache[pattern] = [
+        #     "/-/static-plugins/datasette_nteract_data_explorer/{}".format(path.basename(g))
+        #     for g in glob.glob(pattern)
+        # ]
         cache[pattern] = [
-            "/-/static-plugins/datasette_nteract_data_explorer/{}".format(os.path.basename(g))
+            "/assets/{}".format(path.basename(g))
             for g in glob.glob(pattern)
         ]
     return cache[pattern]

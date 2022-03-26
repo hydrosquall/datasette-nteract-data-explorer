@@ -2,8 +2,30 @@
   "name": "datasette-nteract-data-explorer",
   "version": "1.0.0",
   "description": "Nteract data explorer in datasette",
-  "main": "index.ts",
+  "main": "frontend-src/index.js",
   "author": "Cameron Yick <cameron.yick@datadoghq.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.4.0",
+    "process": "^0.11.10"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "serve:dev": "yarn parcel frontend-src/index.html",
+    "build": "yarn parcel build frontend-src/main.tsx"
+  },
+  "dependencies": {
+    "@nteract/data-explorer": "^8.2.12",
+    "@swc/helpers": "^0.3.8",
+    "preact": "^10.6.6",
+    "styled-components": "^5.3.5"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime"
+  }
 }
