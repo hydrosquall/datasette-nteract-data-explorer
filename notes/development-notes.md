@@ -1,5 +1,7 @@
 ### Notes
 
+> this is not official documentation, and should be regarded as a "scratch pad".
+
 A test command:
 
 ```bash
@@ -25,7 +27,7 @@ datasette ~/Library/Safari/History.db  --plugins-dir=plugins/ --static assets:di
 
 ### Bundling
 
-Use these two commands
+Use something resembling these two commands in tandem
 
 ```
 yarn run build
@@ -38,4 +40,9 @@ python setup.py sdist &&  datasette install dist/datasette-nteract-data-explorer
 ### Sample Datasets
 
 - <http://2016.padjo.org/tutorials/sqlite-your-browser-history/>
+
+### Research links
+
 - <https://github.com/metonym/parcel-preact-typescript>
+- The parcel warning messages were very helpful for realizing that the bundles were much bigger than I had hoped
+- At some point, we may want to revisit tree-shaking: <https://parceljs.org/features/code-splitting/>
