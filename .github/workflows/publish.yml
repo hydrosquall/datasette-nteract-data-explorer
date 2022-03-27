@@ -49,8 +49,13 @@ jobs:
       run: |
         pip install setuptools wheel twine build
 
+    - name: Read .nvmrc
+      run: echo ::set-output name=NODE_VERSION::$(cat .node-version)
+      id: nodenv
+
     - name: Set up Node.js to build statics
       uses: actions/setup-node@v1
+      node-version: "${{ steps.nodenv.outputs.NODE_VERSION }}"
 
     - name: Install NPM dependencies
       run: yarn
