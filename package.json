@@ -17,10 +17,10 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead, not ios_saf < 13",
   "scripts": {
-    "dev": "yarn parcel frontend-src/index.html --no-source-maps",
-    "build": "yarn parcel build frontend-src/index.html --no-source-maps && yarn run export",
-    "export": "mkdir -p datasette_nteract_data_explorer/static && mv dist/*.js datasette_nteract_data_explorer/static",
-    "clean": "rm -rf dist/ && rm -rf datasette_nteract_data_explorer/static/* "
+    "dev": "yarn parcel frontend-src/index.html --no-source-maps --dist-dir js-dist/",
+    "build": "yarn parcel build frontend-src/index.html --no-source-maps --dist-dir js-dist/ && yarn run export",
+    "export": "mkdir -p datasette_nteract_data_explorer/static && mv js-dist/*.js datasette_nteract_data_explorer/static",
+    "clean": "rm -rf js-dist/ && rm -rf datasette_nteract_data_explorer/static/* "
   },
   "dependencies": {
     "@modulz/design-system": "^0.6.2",
