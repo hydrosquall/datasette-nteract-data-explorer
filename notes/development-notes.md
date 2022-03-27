@@ -46,3 +46,8 @@ python setup.py sdist &&  datasette install dist/datasette-nteract-data-explorer
 - <https://github.com/metonym/parcel-preact-typescript>
 - The parcel warning messages were very helpful for realizing that the bundles were much bigger than I had hoped
 - At some point, we may want to revisit tree-shaking: <https://parceljs.org/features/code-splitting/>
+
+### Mini roadmap
+
+- The "query" view type loses this plugin, we should bring that back
+- Otherwise, people will lose data explorer if they want to apply a custom limit.

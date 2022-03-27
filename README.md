@@ -5,7 +5,13 @@
 [![Tests](https://github.com/hydrosquall/datasette-nteract-data-explorer/workflows/Test/badge.svg)](https://github.com/hydrosquall/datasette-nteract-data-explorer/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/hydrosquall/datasette-nteract-data-explorer/blob/main/LICENSE)
 
-Automatic data visualization for Datasette
+A free automatic data visualization plugin for the [Datasette](https://datasette.io/) ecosystem. Explore your data through clicking and menus, without writing any code.
+
+## Demo
+
+![screenshot](https://p-qkfgo2.t2.n0.cdn.getcloudapp.com/items/7KuQ8rxG/2a9d8178-803c-41a6-8630-9d6db44f20d9.jpg?v=95ed24febf588fcfc957b2e3ae09e61c)
+
+_Running Datasette against my Safari browser history_
 
 ## Installation
 
@@ -17,9 +23,11 @@ datasette install datasette-nteract-data-explorer
 
 ## Usage
 
-- Click "toggle" to open the panel
-- Use the "advanced settings" mode to override the inferred field types. (For example, you may want to treat a number as a "string" to make it appear available as a dimension that could be used with color)
-- See a [live demo](https://data-explorer.nteract.io/) of this component in action.
+- Click "View in Data Explorer" to open the panel.
+- Click the icons on the right hand side to change the visualization type.
+- Use the menus underneath the main graphing area to configure your visualization.
+- Use the "advanced settings" mode to override the inferred field types. For example, you may want to treat a number as a "string" to be able to use it as a category.
+- See a [live demo](https://data-explorer.nteract.io/) of this component and additional documentation.
 - TODO: Add a live Datasette demo.
 
 ## Development
