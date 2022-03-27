@@ -1,37 +1,35 @@
 import { render, h } from "preact";
 
-import { DatasetteDataExplorer } from "./DatasetteDataExplorer";
-
 document.addEventListener("DOMContentLoaded", onLoad);
 
-function onLoad()  {
-    let mountElement, jsonUrl;
+function onLoad() {
+  let mountElement: HTMLElement | null = null;
+  let jsonUrl: string | null = null;
 
-    const jsonEl = document.querySelector(".export-links a[href*=json]");
+  const jsonEl = document.querySelector(".export-links a[href*=json]");
 
-    if (jsonEl) {
-      jsonUrl = jsonEl.getAttribute("href");
-      // Create elements for adding graph tool to page
-      mountElement = document.createElement("div");
-      let table = document.querySelector("table.rows-and-columns");
-      if (table && table.parentNode) {
-        table.parentNode.insertBefore(mountElement, table);
-      }
+  if (jsonEl) {
+    jsonUrl = jsonEl.getAttribute("href");
+    mountElement = document.createElement("div");
+    let table = document.querySelector("table.rows-and-columns");
+    if (table && table.parentNode) {
+      table.parentNode.insertBefore(mountElement, table);
     }
+  }
 
-    if (jsonUrl) {
-      // Add _shape=array
-      jsonUrl += jsonUrl.indexOf("?") > -1 ? "&" : "?";
-      jsonUrl += "_shape=array";
+  if (jsonUrl) {
+    jsonUrl += jsonUrl.indexOf("?") > -1 ? "&" : "?";
+    jsonUrl += "_shape=array";
 
-      // ReactDOM.render(
-      //   <DatasetteVega base_url={jsonUrl} onFragmentChange={onFragmentChange} />,
-      //   visTool
-      // );
-      if (mountElement) {
+    // Lazy load for code splitting
+    import("./DatasetteDataExplorer").then(function ({
+      DatasetteDataExplorer,
+    }) {
+      if (mountElement && jsonUrl) {
         render(<DatasetteDataExplorer dataUrl={jsonUrl} />, mountElement);
       } else {
-        console.log("Couldn't find a mount point");
+        console.log("Couldn't find mount point");
       }
-    }
+    });
+  }
 }

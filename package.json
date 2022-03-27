@@ -1,8 +1,12 @@
 {
   "name": "datasette-nteract-data-explorer",
-  "version": "1.0.0",
-  "description": "Nteract data explorer in datasette",
+  "version": "0.1.0",
+  "description": "Automatic data visualization in datasette",
+  "source": "frontend-src/main.tsx",
   "main": "dist/index.js",
+  "targets": {
+    "main": false
+  },
   "author": "Cameron Yick <cameron.yick@datadoghq.com>",
   "license": "MIT",
   "private": false,
@@ -11,10 +15,12 @@
     "parcel": "^2.4.0",
     "process": "^0.11.10"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.5%, last 2 versions, not dead, not ios_saf < 13",
   "scripts": {
-    "serve:dev": "yarn parcel frontend-src/index.html",
-    "build": "yarn parcel build frontend-src/main.tsx"
+    "dev": "yarn parcel frontend-src/index.html --no-source-maps",
+    "build": "yarn parcel build frontend-src/index.html --no-source-maps --no-content-hash && yarn run export",
+    "export": "mv dist/*.js datasette_nteract_data_explorer/static",
+    "clean": "rm -rf dist/ && rm -rf datasette_nteract_data_explorer/static/* "
   },
   "dependencies": {
     "@modulz/design-system": "^0.6.2",

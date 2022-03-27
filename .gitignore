@@ -12,3 +12,4 @@ dist
 build
 .parcel-cache
 node_modules/
+datasette_nteract_data_explorer/static/
