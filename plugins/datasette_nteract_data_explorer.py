@@ -5,7 +5,7 @@ from os import path, pardir
 
 # TODO: is this in-memory cache necessary?
 cache = {}
-static_dir = path.join(path.dirname(__file__), pardir, "dist")
+static_dir = path.join(path.dirname(__file__), pardir, "js-dist")
 
 # cache files
 def cached_filepaths_for_extension(extension):
