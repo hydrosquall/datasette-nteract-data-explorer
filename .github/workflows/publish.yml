@@ -45,9 +45,19 @@ jobs:
         key: ${{ runner.os }}-publish-pip-${{ hashFiles('**/setup.py') }}
         restore-keys: |
           ${{ runner.os }}-publish-pip-
-    - name: Install dependencies
+    - name: Install python dependencies
       run: |
         pip install setuptools wheel twine build
+
+    - name: Set up Node.js to build statics
+      uses: actions/setup-node@v1
+
+    - name: Install NPM dependencies
+      run: yarn
+
+    - name: Build plugin static files
+      run: yarn run build
+
     - name: Publish
       env:
         TWINE_USERNAME: __token__
@@ -55,4 +65,3 @@ jobs:
       run: |
         python -m build
         twine upload dist/*
-
