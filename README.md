@@ -30,6 +30,13 @@ datasette install datasette-nteract-data-explorer
 - See a [live demo](https://data-explorer.nteract.io/) of this component and additional documentation.
 - TODO: Add a live Datasette demo.
 
+Demo if you clone this repository
+
+```bash
+datasette -i demo/happy_planet_index.db
+```
+
+
 ## Development
 
 See [contributing docs](./docs/CONTRIBUTING.md)
@@ -39,3 +46,4 @@ See [contributing docs](./docs/CONTRIBUTING.md)
 - The [Data Explorer](https://github.com/nteract/data-explorer) was designed by Elijah Meeks. I co-maintain this project as part of the [Nteract](https://nteract.io/) open-source team. You can read about the design behind this tool [here](https://blog.nteract.io/designing-the-nteract-data-explorer-f4476d53f897)
 - The data model is based on the [Frictionless Data Spec](https://specs.frictionlessdata.io/).
 - This plugin was bootstrapped by Simon Willison's [Datasette plugin template](https://simonwillison.net/2020/Jun/20/cookiecutter-plugins/)
+- Demo dataset from the [Happy Planet Index](https://happyplanetindex.org/) was cleaned by Doris Lee. This dataset was chosen because of its global appeal, modest size, and variety in column datatypes (numbers, low cardinality and high cardinality strings, booleans).

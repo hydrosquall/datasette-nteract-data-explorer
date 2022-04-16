@@ -1,0 +1,138 @@
+Country,Region,AvrgLifeExpectancy,AvrgWellBeing,HappyLifeYears,Footprint,Inequality,HappyPlanetIndex,GDPPerCapita,Population,G10,cca3,landlocked,NumOfficialLanguages,NumBorderingCountries,area
+Afghanistan,Middle East,59.7,3.8,12.4,0.8,0.43,20.2,691,29726803,False,AFG,True,3.0,6.0,652230
+Albania,Post-communist,77.3,5.5,34.4,2.2,0.17,36.8,4247,2900489,False,ALB,False,1.0,4.0,28748
+Algeria,Middle East,74.3,5.6,30.5,2.1,0.24,33.3,5584,37439427,False,DZA,False,1.0,7.0,2381741
+Argentina,Americas,75.9,6.5,40.2,3.1,0.16,35.2,14357,42095224,False,ARG,False,2.0,5.0,2780400
+Armenia,Post-communist,74.4,4.3,24.0,2.2,0.22,25.7,3566,2978339,False,ARM,True,1.0,4.0,29743
+Australia,Asia Pacific,82.1,7.2,53.1,9.3,0.08,21.2,67646,22728254,False,AUS,False,1.0,0.0,7692024
+Austria,Europe,81.0,7.4,54.4,6.1,0.07,30.5,48324,8429991,False,AUT,True,1.0,8.0,83871
+Bangladesh,Asia Pacific,70.8,4.7,23.3,0.7,0.27,38.4,859,155257387,False,BGD,False,1.0,2.0,147570
+Belarus,Post-communist,70.9,5.7,34.0,5.1,0.13,21.7,6722,9464000,False,BLR,True,2.0,5.0,207600
+Belgium,Europe,80.4,6.9,49.5,7.4,0.09,23.7,44731,11128246,True,BEL,False,3.0,4.0,30528
+Belize,Americas,69.8,6.1,34.2,2.5,0.18,33.8,4674,336707,False,BLZ,False,3.0,2.0,22966
+Benin,Sub Saharan Africa,59.2,3.2,9.9,1.4,0.44,13.4,808,10049792,False,BEN,False,1.0,4.0,112622
+Bhutan,Asia Pacific,68.7,5.6,27.4,2.3,0.27,28.6,2452,743711,False,BTN,True,1.0,2.0,38394
+"Bolivia, Plurinational State of",Americas,67.5,6.0,25.6,3.0,0.35,23.3,2645,10238762,False,BOL,True,4.0,5.0,1098581
+Bosnia and Herzegovina,Post-communist,76.2,4.8,28.6,3.1,0.19,25.3,4495,3828419,False,BIH,False,3.0,3.0,51209
+Botswana,Sub Saharan Africa,64.2,4.8,21.3,3.8,0.28,16.6,6936,2132822,False,BWA,True,2.0,4.0,582000
+Brazil,Americas,73.9,6.9,39.0,3.1,0.22,34.3,12157,202401584,False,BRA,False,1.0,10.0,8515767
+Bulgaria,Post-communist,73.9,4.2,24.0,3.3,0.19,20.4,7333,7305888,False,BGR,False,1.0,5.0,110879
+Burkina Faso,Sub Saharan Africa,58.0,4.0,12.6,1.2,0.43,17.9,673,16590813,False,BFA,True,1.0,6.0,272967
+Burundi,Sub Saharan Africa,55.8,3.4,9.5,0.8,0.48,15.6,244,10124572,False,BDI,True,2.0,3.0,27834
+Cambodia,Asia Pacific,67.5,3.9,18.2,1.2,0.28,25.6,946,14832255,False,KHM,False,1.0,3.0,181035
+Cameroon,Sub Saharan Africa,54.6,4.2,11.6,1.2,0.47,16.7,1222,21659488,False,CMR,False,2.0,6.0,475442
+Canada,Americas,81.7,7.4,53.9,8.2,0.09,23.9,52738,34751476,True,CAN,False,2.0,1.0,9984670
+Chad,Sub Saharan Africa,50.8,4.0,9.6,1.5,0.51,12.8,973,12715465,False,TCD,True,2.0,6.0,1284000
+Chile,Americas,81.1,6.6,44.7,4.4,0.14,31.7,15253,17388437,False,CHL,False,1.0,3.0,756102
+China,Asia Pacific,75.4,5.1,30.6,3.4,0.17,25.7,6265,1350695000,False,CHN,False,1.0,16.0,9706961
+Colombia,Americas,73.7,6.4,35.1,1.9,0.24,40.7,7885,46881018,False,COL,False,1.0,5.0,1141748
+Comoros,Sub Saharan Africa,62.6,4.0,15.4,1.0,0.36,23.1,750,733661,False,COM,False,3.0,0.0,1862
+Costa Rica,Americas,79.1,7.3,48.2,2.8,0.15,44.7,9733,4654148,False,CRI,False,1.0,2.0,51100
+Croatia,Post-communist,77.0,6.0,39.6,3.9,0.12,30.2,13236,4267558,False,HRV,False,1.0,5.0,56594
+Cyprus,Europe,79.8,6.2,42.3,4.2,0.12,30.7,28868,1129303,False,CYP,False,2.0,0.0,9251
+Denmark,Europe,79.8,7.5,54.4,5.5,0.07,32.7,57636,5591572,False,DNK,False,1.0,1.0,43094
+Djibouti,Sub Saharan Africa,61.3,4.4,15.1,2.2,0.42,16.4,1587,853069,False,DJI,False,2.0,3.0,23200
+Dominican Republic,Americas,73.1,4.8,23.7,1.5,0.3,30.3,5967,10155036,False,DOM,False,1.0,1.0,48671
+Ecuador,Americas,75.4,6.0,34.3,2.2,0.22,37.0,5702,15419493,False,ECU,False,1.0,2.0,276841
+Egypt,Middle East,70.7,4.2,21.8,2.2,0.23,23.8,3226,85660902,False,EGY,False,1.0,4.0,1002450
+El Salvador,Americas,72.5,5.9,32.2,2.1,0.22,35.6,3922,6072233,False,SLV,False,1.0,2.0,21041
+Estonia,Post-communist,76.2,5.4,35.0,6.9,0.12,17.9,17491,1322696,False,EST,False,1.0,2.0,45227
+Ethiopia,Sub Saharan Africa,62.8,4.6,17.8,1.0,0.36,26.7,470,92191211,False,ETH,True,1.0,6.0,1104300
+Finland,Europe,80.4,7.4,54.6,5.9,0.06,31.3,47416,5413971,False,FIN,False,2.0,3.0,338424
+France,Europe,81.8,6.6,48.1,5.1,0.09,30.4,40850,65639975,True,FRA,False,1.0,8.0,551695
+Gabon,Sub Saharan Africa,63.3,4.0,15.4,2.0,0.36,17.5,10642,1613489,False,GAB,False,1.0,3.0,267668
+Georgia,Post-communist,74.6,4.3,24.7,1.6,0.2,31.1,4143,3825000,False,GEO,False,1.0,4.0,69700
+Germany,Europe,80.6,6.7,48.2,5.3,0.08,29.8,44011,80425823,True,DEU,False,1.0,9.0,357114
+Ghana,Sub Saharan Africa,61.0,5.1,18.8,2.0,0.38,21.4,1642,25544565,False,GHA,False,1.0,3.0,238533
+Greece,Europe,80.5,5.1,33.3,4.4,0.16,23.6,22243,11045011,False,GRC,False,1.0,4.0,131990
+Guatemala,Americas,71.4,5.9,29.6,1.9,0.27,34.2,3279,15368759,False,GTM,False,1.0,4.0,108889
+Guinea,Sub Saharan Africa,57.7,3.7,11.8,1.4,0.42,15.9,487,11628767,False,GIN,False,1.0,6.0,245857
+Haiti,Americas,62.1,4.4,16.5,0.6,0.37,28.6,767,10288828,False,HTI,False,2.0,1.0,27750
+Honduras,Americas,72.8,4.6,22.1,1.7,0.31,27.2,2395,7736131,False,HND,False,1.0,3.0,112492
+Hong Kong,Asia Pacific,83.6,5.5,40.1,8.8,0.1,16.8,36708,7154600,False,HKG,False,2.0,1.0,1104
+Hungary,Post-communist,74.9,4.7,28.7,2.9,0.15,26.4,12820,9920362,False,HUN,True,1.0,7.0,93028
+Iceland,Europe,82.2,7.6,58.0,6.4,0.05,31.1,44259,320716,False,ISL,False,1.0,0.0,103000
+India,Asia Pacific,67.3,4.6,20.4,1.2,0.31,29.2,1450,1263589639,False,IND,False,3.0,6.0,3287590
+Indonesia,Asia Pacific,68.5,5.4,28.4,1.6,0.21,35.7,3701,248037853,False,IDN,False,1.0,3.0,1904569
+Iran,Middle East,74.8,4.6,25.4,2.8,0.23,24.0,7711,76156975,False,IRN,False,1.0,7.0,1648195
+Iraq,Middle East,69.0,4.7,22.8,1.9,0.27,26.5,6649,32780975,False,IRQ,False,3.0,6.0,438317
+Ireland,Europe,80.5,7.0,50.3,5.6,0.08,30.0,48977,4586897,False,IRL,False,2.0,1.0,70273
+Israel,Middle East,81.9,7.1,52.5,6.2,0.08,28.8,32819,7910500,False,ISR,False,2.0,5.0,20770
+Italy,Europe,82.7,5.8,41.1,4.6,0.12,28.1,34844,59539717,True,ITA,False,1.0,6.0,301336
+Jamaica,Americas,75.3,5.6,31.9,1.9,0.21,36.9,5446,2707805,False,JAM,False,2.0,0.0,10991
+Japan,Asia Pacific,83.2,6.0,44.0,5.0,0.09,28.3,46679,127561489,True,JPN,False,1.0,0.0,377930
+Kazakhstan,Post-communist,68.6,5.8,31.7,5.6,0.18,19.1,12120,16791425,False,KAZ,True,2.0,5.0,2724900
+Kenya,Sub Saharan Africa,60.3,4.5,16.2,1.0,0.38,24.2,1185,42542978,False,KEN,False,2.0,5.0,580367
+Kyrgyzstan,Post-communist,69.7,5.2,28.7,1.9,0.18,33.1,1178,5607200,False,KGZ,True,2.0,4.0,199951
+Latvia,Post-communist,73.6,5.1,31.2,6.3,0.14,17.1,13775,2034319,False,LVA,False,1.0,4.0,64559
+Lebanon,Middle East,78.8,4.6,28.2,3.8,0.19,21.9,9729,4440728,False,LBN,False,2.0,2.0,10452
+Lesotho,Sub Saharan Africa,48.9,4.9,13.4,1.7,0.42,16.7,1159,2057331,False,LSO,True,2.0,1.0,30355
+Liberia,Sub Saharan Africa,60.2,4.4,15.7,1.2,0.38,22.2,414,4190155,False,LBR,False,1.0,3.0,111369
+Lithuania,Post-communist,72.8,5.8,36.4,5.8,0.11,21.0,14343,2987773,False,LTU,False,1.0,4.0,65300
+Luxembourg,Europe,81.1,7.0,51.7,15.8,0.07,13.2,105447,530946,False,LUX,True,3.0,3.0,2586
+Macedonia,Post-communist,75.1,4.6,27.2,3.3,0.18,23.4,4710,2069270,False,MKD,True,1.0,5.0,25713
+Malawi,Sub Saharan Africa,60.1,4.3,13.7,0.8,0.45,22.1,270,15700436,False,MWI,True,2.0,3.0,118484
+Malaysia,Asia Pacific,74.4,5.9,38.3,3.7,0.1,30.3,10835,29021940,False,MYS,False,2.0,3.0,330803
+Malta,Europe,80.2,6.0,40.8,4.4,0.13,29.0,21176,419455,False,MLT,False,2.0,0.0,316
+Mauritania,Sub Saharan Africa,62.6,4.7,18.0,2.5,0.37,18.0,1283,3777067,False,MRT,False,1.0,4.0,1030700
+Mauritius,Sub Saharan Africa,74.0,5.5,33.1,3.5,0.17,27.4,9114,1255882,False,MUS,False,3.0,0.0,2040
+Mexico,Americas,76.4,7.3,44.3,2.9,0.19,40.7,9703,122070963,False,MEX,False,1.0,3.0,1964375
+Mongolia,Asia Pacific,68.6,4.9,25.3,6.1,0.22,14.3,4377,2808339,False,MNG,True,1.0,2.0,1564110
+Montenegro,Post-communist,75.8,5.2,32.1,3.8,0.16,25.1,6587,620601,False,MNE,False,1.0,5.0,13812
+Morocco,Middle East,73.4,5.0,26.7,1.7,0.25,32.7,2931,32984190,False,MAR,False,2.0,3.0,446550
+Mozambique,Sub Saharan Africa,54.3,5.0,15.0,0.9,0.43,23.7,565,25732928,False,MOZ,False,1.0,6.0,801590
+Myanmar,Asia Pacific,65.5,4.4,18.8,1.4,0.32,24.7,1421,52543841,False,MMR,False,1.0,5.0,676578
+Namibia,Sub Saharan Africa,64.0,4.7,21.3,2.5,0.26,21.6,5680,2291645,False,NAM,False,9.0,4.0,825615
+Nepal,Asia Pacific,68.8,4.2,20.2,1.0,0.27,30.5,685,27500515,False,NPL,True,1.0,2.0,147181
+Netherlands,Europe,81.2,7.5,57.0,5.3,0.04,35.3,49475,16754962,True,NLD,False,1.0,2.0,41850
+New Zealand,Asia Pacific,81.4,7.2,52.7,5.6,0.08,31.3,39505,4408100,False,NZL,False,3.0,0.0,270467
+Nicaragua,Americas,74.3,5.4,29.2,1.4,0.25,38.7,1780,5877034,False,NIC,False,1.0,2.0,130373
+Niger,Sub Saharan Africa,60.0,3.8,13.1,1.6,0.4,16.8,394,17635782,False,NER,True,1.0,7.0,1267000
+Nigeria,Sub Saharan Africa,52.1,5.5,15.5,1.2,0.44,22.2,2740,168240403,False,NGA,False,1.0,4.0,923768
+Norway,Europe,81.3,7.7,57.1,5.0,0.07,36.8,101564,5018573,False,NOR,False,3.0,3.0,323802
+Oman,Middle East,76.3,6.9,44.5,7.5,0.13,21.1,21534,3545192,False,OMN,False,1.0,3.0,309500
+Pakistan,Asia Pacific,65.7,5.1,19.5,0.8,0.4,31.5,1266,177392252,False,PAK,False,2.0,4.0,881912
+Palestine,Middle East,72.6,4.6,24.5,1.2,0.24,34.5,2783,4046901,False,PSE,False,1.0,3.0,6220
+Panama,Americas,77.2,6.9,42.1,2.8,0.19,39.5,10139,3743761,False,PAN,False,1.0,2.0,75417
+Paraguay,Americas,72.6,5.8,31.8,4.2,0.22,23.3,3858,6379162,False,PRY,True,2.0,3.0,406752
+Peru,Americas,74.1,5.8,32.9,2.3,0.21,34.6,6389,30158768,False,PER,False,3.0,5.0,1285216
+Philippines,Asia Pacific,67.9,5.0,24.1,1.1,0.26,35.0,2605,96017322,False,PHL,False,2.0,0.0,342353
+Poland,Post-communist,76.9,5.9,39.2,4.4,0.11,27.5,13142,38063164,False,POL,False,1.0,7.0,312679
+Portugal,Europe,80.3,5.0,32.3,3.9,0.16,24.8,20577,10514844,False,PRT,False,1.0,1.0,92090
+Romania,Post-communist,74.3,5.2,30.1,2.7,0.19,28.8,8577,20058035,False,ROU,False,1.0,5.0,238391
+Russian Federation,Post-communist,69.5,5.6,31.7,5.7,0.16,18.7,14079,143201676,False,RUS,False,1.0,14.0,17098242
+Rwanda,Sub Saharan Africa,63.1,3.3,12.4,0.9,0.37,19.6,667,10817350,False,RWA,True,3.0,4.0,26338
+Senegal,Sub Saharan Africa,65.4,3.7,15.5,1.2,0.33,21.9,1019,13780108,False,SEN,False,1.0,5.0,196722
+Serbia,Post-communist,74.5,5.2,30.3,2.7,0.19,29.0,5659,7199077,False,SRB,True,1.0,8.0,88361
+Sierra Leone,Sub Saharan Africa,49.8,4.5,10.8,1.2,0.5,15.3,619,6043157,False,SLE,False,1.0,2.0,71740
+Slovakia,Post-communist,75.9,5.9,37.9,4.1,0.13,28.2,17207,5407579,False,SVK,True,1.0,5.0,49037
+Slovenia,Post-communist,80.0,6.1,42.6,5.8,0.1,24.6,22478,2057159,False,SVN,False,1.0,4.0,20273
+South Africa,Sub Saharan Africa,56.3,5.1,18.5,3.3,0.33,15.9,7592,52341695,False,ZAF,False,11.0,6.0,1221037
+South Korea,Asia Pacific,81.3,6.0,42.2,5.7,0.11,24.8,24454,50004441,False,KOR,False,1.0,1.0,100210
+Spain,Europe,82.2,6.3,45.3,3.7,0.1,36.0,28648,46773055,False,ESP,False,1.0,5.0,505992
+Sri Lanka,Asia Pacific,74.6,4.2,24.9,1.3,0.17,33.8,3351,20424000,False,LKA,False,2.0,1.0,65610
+Suriname,Americas,70.8,6.3,35.2,4.3,0.19,25.4,9422,528535,False,SUR,False,1.0,3.0,163820
+Swaziland,Sub Saharan Africa,48.9,4.9,13.6,2.0,0.41,15.5,3989,1231694,False,SWZ,True,2.0,2.0,17364
+Sweden,Europe,81.8,7.6,57.4,7.3,0.06,28.0,57134,9519374,True,SWE,False,1.0,2.0,450295
+Switzerland,Europe,82.6,7.8,59.3,5.8,0.06,34.3,83209,7996861,True,CHE,True,4.0,5.0,41284
+Syria,Middle East,70.4,3.2,14.7,1.5,0.3,19.1,2080,21427155,False,SYR,False,1.0,5.0,185180
+Tajikistan,Post-communist,69.0,4.5,22.2,0.9,0.26,34.2,962,7930929,False,TJK,True,2.0,4.0,143100
+Tanzania,Sub Saharan Africa,63.5,4.0,16.2,1.3,0.33,22.1,828,48645709,False,TZA,False,2.0,8.0,945087
+Thailand,Asia Pacific,74.1,6.3,38.6,2.7,0.15,37.3,5918,67164130,False,THA,False,1.0,4.0,513120
+Togo,Sub Saharan Africa,58.6,2.9,9.0,1.1,0.43,13.2,580,6745581,False,TGO,False,1.0,3.0,56785
+Trinidad and Tobago,Americas,70.1,6.4,34.4,7.9,0.21,15.7,18322,1341579,False,TTO,False,1.0,0.0,5130
+Tunisia,Middle East,74.6,4.5,25.2,2.3,0.22,26.2,4188,10777500,False,TUN,False,1.0,2.0,163610
+Turkey,Middle East,74.7,5.3,31.2,3.3,0.19,26.4,10646,74099255,False,TUR,False,1.0,8.0,783562
+Turkmenistan,Post-communist,65.3,5.5,24.0,5.5,0.31,14.6,6798,5172941,False,TKM,True,2.0,4.0,488100
+Uganda,Sub Saharan Africa,57.1,4.3,13.8,1.2,0.41,19.4,656,35400620,False,UGA,True,2.0,5.0,241550
+Ukraine,Post-communist,70.3,5.0,28.3,2.8,0.17,26.4,3855,45593300,False,UKR,False,1.0,7.0,603500
+United Kingdom,Europe,80.4,6.9,49.1,4.9,0.09,31.9,41295,63700300,True,GBR,False,1.0,1.0,242900
+United States of America,Americas,78.8,7.0,46.8,8.2,0.13,20.7,51457,314112078,True,USA,False,1.0,2.0,9372610
+Uruguay,Americas,76.9,6.4,39.4,2.9,0.18,36.1,15128,3396753,False,URY,False,1.0,2.0,181034
+Uzbekistan,Post-communist,68.2,6.0,27.9,2.3,0.3,29.1,1719,29774500,False,UZB,True,2.0,5.0,447400
+Vanuatu,Asia Pacific,71.3,6.5,34.9,1.9,0.22,40.6,3158,247498,False,VUT,False,3.0,0.0,12189
+Venezuela,Americas,73.9,7.1,41.5,3.6,0.19,33.6,12772,29854238,False,VEN,False,1.0,3.0,916445
+Vietnam,Asia Pacific,75.5,5.5,32.8,1.7,0.19,40.3,1755,88809200,False,VNM,False,1.0,3.0,331212
+Yemen,Middle East,63.3,4.1,15.2,1.0,0.39,22.8,1289,24882792,False,YEM,False,1.0,2.0,527968
+Zambia,Sub Saharan Africa,58.4,5.0,16.7,1.0,0.41,25.2,1687,14786581,False,ZMB,True,1.0,8.0,752612
+Zimbabwe,Sub Saharan Africa,53.7,5.0,16.4,1.4,0.37,22.1,851,14565482,False,ZWE,True,15.0,4.0,390757
