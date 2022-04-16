@@ -1,6 +1,5 @@
 # Need to include this in requirements manually, or else
 # vercel's CI isn't able to run the publish command.
 pysqlite3-binary
-sqlite-utils>=3.2
 datasette>=0.61
 datasette-publish-vercel>=0.11
