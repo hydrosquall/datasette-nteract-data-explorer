@@ -2,6 +2,7 @@
 # https://github.com/simonw/datasette-publish-vercel/blob/main/datasette_publish_vercel/__init__.py
 # Goal: support the functions argument
 # In future... need to serve statics from a sensible folder
+# Abandoning this for now since you can't bootstrap vercel to have a plugin available before running the publish command...
 
 from datasette import hookimpl
 from datasette.publish.common import (
