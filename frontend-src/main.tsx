@@ -6,7 +6,9 @@ function onLoad() {
   let mountElement: HTMLElement | null = null;
   let jsonUrl: string | null = null;
 
-  const jsonEl = document.querySelector(".export-links a[href*=json]");
+  const jsonEl = document.querySelector(
+    'link[type="application/json+datasette"]'
+  );
 
   if (jsonEl) {
     jsonUrl = jsonEl.getAttribute("href");
@@ -18,6 +20,7 @@ function onLoad() {
   }
 
   if (jsonUrl) {
+    // reshape URL to include another query parameter
     jsonUrl += jsonUrl.indexOf("?") > -1 ? "&" : "?";
     jsonUrl += "_shape=array";
 
