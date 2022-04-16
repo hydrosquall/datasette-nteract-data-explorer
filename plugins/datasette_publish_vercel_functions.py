@@ -1,6 +1,7 @@
 # This is a fork of
 # https://github.com/simonw/datasette-publish-vercel/blob/main/datasette_publish_vercel/__init__.py
 # Goal: support the functions argument
+# In future... need to serve statics from a sensible folder
 
 from datasette import hookimpl
 from datasette.publish.common import (
@@ -214,7 +215,6 @@ def _publish_vercel(
         {
             "name": project,
             "version": 2,
-            "functions": {"api/index.py": {}},
              "rewrites": [{ "source": "/(.*)", "destination": "api/index.py" }],
         },
         indent=4,
