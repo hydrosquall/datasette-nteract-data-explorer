@@ -1,2 +1,4 @@
+
+sqlite-utils>=3.2
 datasette>=0.61
 datasette-publish-vercel>=0.11
