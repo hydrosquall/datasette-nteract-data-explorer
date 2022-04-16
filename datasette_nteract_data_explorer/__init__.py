@@ -24,8 +24,7 @@ def cached_filepaths_for_js_modules():
         ## Figure out support for older browsers once
         ## an MVP is working better.
         filesizes = [path.getsize(file) for file in glob.glob(pattern)]
-
-        print("pattern", pattern, files)
+        # print("pattern", pattern, files)
 
         smallestFileIndex = argmin(filesizes)
 
@@ -57,16 +56,25 @@ def cached_filepaths_for_extension(extension):
     return cache[pattern]
 
 
+# Create a set with table names that should activate the plugin
+# for the datasette UI.
+# Listing: https://docs.datasette.io/en/stable/custom_templates.html#custom-templates
+# database view is activated by writing custom SQL
+PERMITTED_VIEWS = {"table", "query", "database"}
+
+
 # These hooks only run
 # for the TABLE pages. Other view choices include
 # database, index, etc
 @hookimpl
 def extra_css_urls(view_name):
-    if view_name == "table":
+    # check if the view is in the set of permitted views
+    if view_name in PERMITTED_VIEWS:
         return cached_filepaths_for_extension("css")
 
 
 @hookimpl
 def extra_js_urls(view_name):
-    if view_name == "table":
+    print(view_name)
+    if view_name in PERMITTED_VIEWS:
         return cached_filepaths_for_js_modules()
