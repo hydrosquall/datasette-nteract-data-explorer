@@ -7,7 +7,11 @@ function onLoad() {
   let jsonUrl: string | null = null;
 
   const jsonEl = document.querySelector(
-    'link[type="application/json+datasette"]'
+    // This is available only after datasette version 61.1
+    // Remove this once plugin can specify which version of
+    // datasette it requires for correct operation.
+    // 'link[type="application/json+datasette"]'
+    '.export-links a[href*=json]'
   );
 
   if (jsonEl) {
