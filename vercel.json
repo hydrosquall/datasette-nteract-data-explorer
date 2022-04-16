@@ -1,14 +1,8 @@
 {
   "name": "datasette-nteract-data-explorer",
   "version": 2,
-  "builds": [
-    {
-      "src": "index.py",
-      "use": "@vercel/python"
-    }
-  ],
   "functions": {
-      "index.py"
+    "api/index.py": {}
   },
-  "rewrites": [{ "src": "/(.*)", "dest": "index.py" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "api/index.py" }]
 }

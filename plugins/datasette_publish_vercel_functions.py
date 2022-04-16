@@ -214,8 +214,8 @@ def _publish_vercel(
         {
             "name": project,
             "version": 2,
-            "builds": [{"src": "index.py", "use": "@vercel/python"}],
-            "routes": [{"src": "(.*)", "dest": "index.py"}],
+            "functions": {"api/index.py": {}},
+             "rewrites": [{ "source": "/(.*)", "destination": "api/index.py" }],
         },
         indent=4,
     )
@@ -257,7 +257,7 @@ def _publish_vercel(
 
         statics = [item[0] for item in static]
 
-        open("index.py", "w").write(
+        open("api/index.py", "w").write(
             INDEX_PY.format(
                 database_files=json.dumps([os.path.split(f)[-1] for f in files]),
                 extras=", {}".format(", ".join(extras)) if extras else "",
