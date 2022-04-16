@@ -11,5 +11,4 @@ publish-vercel: install
 	 datasette publish vercel demo/happy_planet_index.db \
   			--project=datasette-nteract-data-explorer \
 				--scope=datasette-visualization-plugin-demo \
-				--token=${VERCEL_TOKEN} \
-				--generate-dir=dist/
+				--token=${VERCEL_TOKEN}
