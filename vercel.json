@@ -1,0 +1,5 @@
+{
+"projectId":"prj_vZ5iOJAGs9H26muxFhRC0AQllRR1",
+  "version": 2,
+  "rewrites": [{ "source": "/(.*)", "destination": "api/index.py" }]
+}
