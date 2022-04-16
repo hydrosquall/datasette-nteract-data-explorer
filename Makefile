@@ -18,3 +18,10 @@ publish-vercel: install
 				--token=${VERCEL_TOKEN} \
 				--install datasette-nteract-data-explorer \
 				--public
+
+run-demo:
+	datasette -i demo/happy_planet_index.db \
+		--plugins-dir=demo/demo-plugins
+
+
+# --template-dir=demo/demo-templates
