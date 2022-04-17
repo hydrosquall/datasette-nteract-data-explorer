@@ -21,7 +21,6 @@ publish-vercel: install
 
 run-demo:
 	datasette -i demo/happy_planet_index.db \
-		--plugins-dir=demo/demo-plugins
-
-
+		--plugins-dir=demo/demo-plugins \
+		--metadata=demo/demo-metadata.yml
 # --template-dir=demo/demo-templates
