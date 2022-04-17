@@ -31,12 +31,19 @@ datasette install datasette-nteract-data-explorer
 - Use "advanced settings" mode to override the inferred column types. For example, you may want to treat a number as a "string" to be able to use it as a category.
 - See a [live demo](https://data-explorer.nteract.io/) of the original Nteract data-explorer component used in isolation.
 
-You can run the demo locally:
+You can run the a minimal demo locally after installing the plugin
 
 ```bash
 datasette -i demo/happy_planet_index.db
 ```
 
+Or, run a copy of the demo site. This will contain additional plugins and metadata used in the [published demo](https://datasette-nteract-data-explorer.vercel.app).
+
+```bash
+make run-demo
+```
+
+Thank you for reading this far! If you use the Data Explorer in your own site and would like others to find it, you can [mention it here](https://github.com/hydrosquall/datasette-nteract-data-explorer/discussions/10).
 
 ## Development
 
@@ -48,4 +55,6 @@ See [contributing docs](./docs/CONTRIBUTING.md).
 - The data model is based on the [Frictionless Data Spec](https://specs.frictionlessdata.io/).
 - This plugin was bootstrapped by Simon Willison's [Datasette plugin template](https://simonwillison.net/2020/Jun/20/cookiecutter-plugins/)
 - Demo dataset from the [Happy Planet Index](https://happyplanetindex.org/) was cleaned by Doris Lee. This dataset was chosen because of its global appeal, modest size, and variety in column datatypes (numbers, low cardinality and high cardinality strings, booleans).
-- Thank you for reading this far! If you use the Data Explorer in your own website and would like to share, you can [mention it here](https://github.com/hydrosquall/datasette-nteract-data-explorer/discussions/10).
+- Hosting for the demo site is provided by Vercel.
+
+[![site hosted by vercel logo](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com/?utm_source=datasette-visualization-plugin-demos&utm_campaign=oss)
