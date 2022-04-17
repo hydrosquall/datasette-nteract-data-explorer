@@ -1,0 +1,15 @@
+title:
+  Datasette Nteract Data Explorer Demo
+
+description_html:
+  <iframe src="https://a.cl.ly/yAuK9LRE?embed=true" width="780" height="520" style="border:none" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+
+
+  <p>This is a demo site for the <a href="https://github.com/hydrosquall/datasette-nteract-data-explorer"> Data Explorer</a> plugin for Datasette, a free tool for publishing and exploring open datasets. We are using the <a href="https://happyplanetindex.org/" target="_blank">Happy Planet Index</a> dataset to show how this tool can help you explore your data. </p>
+
+  <p> For more information, please refer to the project <a href="https://github.com/hydrosquall/datasette-nteract-data-explorer">documentation</a>. </p>
+
+license: "Apache License"
+license_url: "https://www.apache.org/licenses/LICENSE-2.0"
+source: Happy Planet Index
+source_url: "https://raw.githubusercontent.com/lux-org/lux-datasets/master/data/hpi_cleaned.csv"
