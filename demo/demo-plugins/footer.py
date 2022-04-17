@@ -1,8 +1,10 @@
 from datasette import hookimpl
-import os
+from os import path
 
-#  set variable named script  equal to contents of footer.js\
-SCRIPT = open(os.path.join(os.path.dirname(__file__), "footer.js")).read()
+# Store JS in separate file to enable basic IDE hinting support
+script_name = path.join(path.dirname(__file__), "footer.js")
+SCRIPT = open(script_name).read()
+
 
 @hookimpl
 def extra_body_script():
