@@ -13,3 +13,6 @@ build
 .parcel-cache
 node_modules/
 datasette_nteract_data_explorer/static/
+
+# Build results for JS
+js-dist/
