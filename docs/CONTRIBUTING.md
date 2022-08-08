@@ -46,3 +46,17 @@ To build the package for production, then export the built files to where the Py
 yarn run build
 yarn run export
 ```
+
+### Releasing new versions
+
+To publish a new package to PyPI
+
+1. Open a PR like this one: <https://github.com/hydrosquall/datasette-nteract-data-explorer/pull/11> which bumps the package version
+2. Tag the PR after merging locally, then push
+
+```bash
+git tag 0.3.1
+git push --tags
+```
+
+3. Open Github Action and run the [manual deploy workflow](https://github.com/hydrosquall/datasette-nteract-data-explorer/actions/workflows/publish.yml)
