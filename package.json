@@ -26,6 +26,7 @@
     "@modulz/design-system": "^0.6.2",
     "@nteract/data-explorer": "^8.2.12",
     "@swc/helpers": "^0.3.8",
+    "jotai": "^1.7.8",
     "localforage": "^1.10.0",
     "preact": "^10.6.6",
     "styled-components": "^5.3.5"
