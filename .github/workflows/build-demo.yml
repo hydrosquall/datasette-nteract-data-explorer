@@ -44,6 +44,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
+
+    - name: Build plugin static files
+      run: yarn run build
+
     # note this step manages its own dependencies
     - name: Deploy Datasette using Vercel
       env:
