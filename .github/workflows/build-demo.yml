@@ -38,6 +38,7 @@ jobs:
     - name: Install pip version
       run: |
         python -m pip install --upgrade pip
+
     - name: Install npm dependencies
       run: yarn
     - name: Setup Node.js
@@ -45,13 +46,12 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: Build plugin static files
-      run: yarn run build
-
     # note this step manages its own dependencies
     - name: Deploy Datasette using Vercel
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       run: |-
         cd main
+        yarn
+        yarn run build
         make publish-vercel
