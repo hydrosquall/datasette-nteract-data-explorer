@@ -11,6 +11,9 @@ import {
 
 import DataExplorer from "@nteract/data-explorer";
 import localforage from "localforage";
+import { atomWithHash } from "jotai/utils";
+import { useAtom } from "jotai";
+
 import { dataFrameToFrictionlessSpec } from "./datasette-data-explorer-helpers";
 import {
   FrictionlessSpecField,
@@ -22,12 +25,17 @@ interface DatasetteDataExplorerProps {
   dataUrl: string;
 }
 
+export const explorerMetadataAtom = atomWithHash("dataExplorer.metadata", { dx: {}});
+
+
 export const DatasetteDataExplorer: FunctionComponent<
   DatasetteDataExplorerProps
 > = (props) => {
   const { dataUrl } = props;
   const [frictionlessData, setFrictionlessData] = useState<FrictionlessSpec>();
   const [customFields, setCustomFields] = useState<FrictionlessSpecField[]>();
+
+  const [explorerMetadata, setExplorerMetadata ] = useAtom(explorerMetadataAtom);
 
   // is settings visibile
   const [isSettingsVisible, setIsSettingsVisible] = useState(false);
@@ -100,7 +108,11 @@ export const DatasetteDataExplorer: FunctionComponent<
             </AccordionTrigger>
             <AccordionContent>
               <div style={{ marginBottom: 20 }}>
-                <DataExplorer data={combinedData} />
+                <DataExplorer
+                  data={combinedData}
+                  metadata={explorerMetadata}
+                  onMetadataChange={setExplorerMetadata}
+                />
                 <div>
                   <Button
                     onClick={() => {
@@ -108,7 +120,7 @@ export const DatasetteDataExplorer: FunctionComponent<
                     }}
                     style={{ marginTop: 4, marginBottom: 4 }}
                   >
-                    {isSettingsVisible ? 'Hide' : "Show"} Data Explorer Settings
+                    {isSettingsVisible ? "Hide" : "Show"} Data Explorer Settings
                   </Button>
 
                   {isSettingsVisible && (
