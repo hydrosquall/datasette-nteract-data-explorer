@@ -1,8 +1,9 @@
 import { render, h } from "preact";
 
-document.addEventListener("DOMContentLoaded", onLoad);
 
 function onLoad() {
+  console.log("datasette-plugins: Registering datasette-nteract-data-explorer");
+
   let mountElement: HTMLElement | null = null;
   let jsonUrl: string | null = null;
 
@@ -39,4 +40,12 @@ function onLoad() {
       }
     });
   }
+}
+
+// Register listeners
+document.addEventListener("DOMContentLoaded", onLoad);
+
+// Prototype: enable dispatch via a web CustomEvent as an alternative
+if ((window as any).__IS_DATASETTE_LITE__) {
+  document.addEventListener("DatasetteLiteScriptsLoaded", onLoad);
 }
