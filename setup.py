@@ -1,7 +1,7 @@
 from setuptools import setup
 import os
 
-VERSION = "0.4.1"
+VERSION = "0.4.2"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def get_long_description():

@@ -1,6 +1,6 @@
 {
   "name": "datasette-nteract-data-explorer",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Automatic data visualization in datasette",
   "source": "frontend-src/main.tsx",
   "main": "dist/index.js",
