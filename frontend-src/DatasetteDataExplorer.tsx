@@ -23,15 +23,16 @@ import { FieldTypeCustomizerPanel } from "./FieldTypeCustomizer";
 
 interface DatasetteDataExplorerProps {
   dataUrl: string;
+  /** When true, synchronizes cmponent state to URL hash */
+  shouldSyncStateToUrlHash?: boolean;
 }
 
 export const explorerMetadataAtom = atomWithHash("dataExplorer.metadata", { dx: {}});
 
-
 export const DatasetteDataExplorer: FunctionComponent<
   DatasetteDataExplorerProps
 > = (props) => {
-  const { dataUrl } = props;
+  const { dataUrl, shouldSyncStateToUrlHash } = props;
   const [frictionlessData, setFrictionlessData] = useState<FrictionlessSpec>();
   const [customFields, setCustomFields] = useState<FrictionlessSpecField[]>();
 
@@ -110,8 +111,8 @@ export const DatasetteDataExplorer: FunctionComponent<
               <div style={{ marginBottom: 20 }}>
                 <DataExplorer
                   data={combinedData}
-                  metadata={explorerMetadata}
-                  onMetadataChange={setExplorerMetadata}
+                  metadata={shouldSyncStateToUrlHash ? explorerMetadata : undefined}
+                  onMetadataChange={shouldSyncStateToUrlHash ? setExplorerMetadata : undefined}
                 />
                 <div>
                   <Button
