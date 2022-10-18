@@ -59,4 +59,9 @@ git tag 0.3.1
 git push --tags
 ```
 
-3. Open Github Action and run the [manual deploy workflow](https://github.com/hydrosquall/datasette-nteract-data-explorer/actions/workflows/publish.yml)
+3. Open the [releases](https://github.com/hydrosquall/datasette-nteract-data-explorer/releases) page, and create a new release
+
+![screenshot calling out the button for creating a new release](https://p-qkfgo2.t2.n0.cdn.getcloudapp.com/items/P8u7rZzw/2669d96b-3075-43b8-b85f-e0fe8e04ddf1.jpg?v=f2955a03fa423a7bd9aa0d7a74a1e018)
+
+
+Once created, the release will automatically trigger the PyPi publish [workflow](https://github.com/hydrosquall/datasette-nteract-data-explorer/actions/workflows/publish.yml)
