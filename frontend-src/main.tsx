@@ -2,7 +2,7 @@ import { render, h } from "preact";
 
 // Modify some behaviors when running as a pluging called by Datasette from a webassembly environment
 // This is a temporary measure until we the Datasette Plugin API can indicate the host environment in a more direct way.
-const IS_DATASETTE_LITE = !Boolean((window as any).__IS_DATASETTE_LITE__);
+const IS_DATASETTE_LITE = Boolean((window as any).__IS_DATASETTE_LITE__);
 
 function onLoad() {
   console.log("datasette-plugins: Registering datasette-nteract-data-explorer");
